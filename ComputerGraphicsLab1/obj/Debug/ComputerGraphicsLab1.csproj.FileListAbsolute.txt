@@ -1,0 +1,11 @@
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\bin\Debug\ComputerGraphicsLab1.exe.config
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\bin\Debug\ComputerGraphicsLab1.exe
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\bin\Debug\ComputerGraphicsLab1.pdb
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.csproj.AssemblyReference.cache
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.csproj.SuggestedBindingRedirects.cache
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.Form1.resources
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.Properties.Resources.resources
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.csproj.GenerateResource.cache
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.csproj.CoreCompileInputs.cache
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.exe
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.pdb

@@ -9,3 +9,4 @@ C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\
 C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.csproj.CoreCompileInputs.cache
 C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.exe
 C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.pdb
+C:\Users\fill2\source\repos\ComputerGraphicsLab1\ComputerGraphicsLab1\obj\Debug\ComputerGraphicsLab1.Form2.resources

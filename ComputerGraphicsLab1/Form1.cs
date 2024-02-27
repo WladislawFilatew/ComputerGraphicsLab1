@@ -16,6 +16,7 @@ namespace ComputerGraphicsLab1
         Bitmap image;
         Queue<Filters> filters;
         List<Bitmap> images;
+        Queue<Bitmap> queueImage;
 
         public Form1()
         {
@@ -48,6 +49,7 @@ namespace ComputerGraphicsLab1
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+
             Bitmap newImage = image;
             while (!backgroundWorker1.CancellationPending)
             {
@@ -223,6 +225,143 @@ namespace ComputerGraphicsLab1
             {
                 pictureBox1.Image = null;
             }
+        }
+
+        private void серыйМирToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters.Enqueue(new GreyWorld());
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void идеальныйОтражательToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters.Enqueue(new perfectReflector());
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void коррекцияСОпорнымЦветомToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters.Enqueue(new reference_color(Color.FromArgb(200,200,200), Color.Wheat));
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void линейноеРастяжениеГистограммыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters.Enqueue(new GrayScaleFilter());
+            filters.Enqueue(new Gistogram());
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void медианныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters.Enqueue(new Median(5));
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void расширениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Matrix += (temp, mask) =>
+            {
+                filters.Enqueue(new Dilation(mask));
+                backgroundWorker1.RunWorkerAsync();
+            };
+            form.ShowDialog();
+        }
+
+        private void сужениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Matrix += (temp, mask) =>
+            {
+                filters.Enqueue(new Erosion(mask));
+                backgroundWorker1.RunWorkerAsync();
+            };
+            form.ShowDialog();
+        }
+
+        private void открытиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Matrix += (temp, mask) =>
+            {
+                filters.Enqueue(new Erosion(mask));
+                filters.Enqueue(new Dilation(mask));
+                backgroundWorker1.RunWorkerAsync();
+            };
+            form.ShowDialog();
+        }
+
+        private void закрытиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Matrix += (temp, mask) =>
+            {
+                filters.Enqueue(new Dilation(mask));
+                filters.Enqueue(new Erosion(mask));
+                backgroundWorker1.RunWorkerAsync();
+            };
+            form.ShowDialog();
+        }
+
+        private void motionBlurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters.Enqueue(new MotionBlur(7));
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void операторЩарраToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters.Enqueue(new OperatorSharra());
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void операторПрюиттаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters.Enqueue(new OperatorPruitta());
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void светящиесяКраяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filters.Enqueue(new Median(3));
+            filters.Enqueue(new OperatorSharra());
+            //filters.Enqueue(new OperatorPruitta());
+            filters.Enqueue(new MaxiFiltr(3));
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void gradToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Matrix += (temp, mask) =>
+            {
+                filters.Enqueue(new Grad(mask));
+                backgroundWorker1.RunWorkerAsync();
+            };
+            form.ShowDialog();
+        }
+
+        private void topHatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Matrix += (temp, mask) =>
+            {
+                filters.Enqueue(new TopHat(mask));
+                backgroundWorker1.RunWorkerAsync();
+            };
+            form.ShowDialog();
+        }
+
+        private void blackHatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Matrix += (temp, mask) =>
+            {
+                filters.Enqueue(new BlackHat(mask));
+                backgroundWorker1.RunWorkerAsync();
+            };
+            form.ShowDialog();
         }
     }
 }
